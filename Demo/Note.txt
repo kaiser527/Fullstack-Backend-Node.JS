@@ -1,0 +1,140 @@
+/Javascript/
+
+*filter method
+filter tra ve mot cai mang moi so voi mang ban dau
+ben trong filter co the viet 1 function va truyen vao 2 tham so index va item
+item: tung phan tu trong array
+index chinh la chi so phan tu cua array
+co the dung trong array cua 1 object
+
+cu phap:
+
+let filter = arr.filter((index, item) => {
+    return item && item...
+})
+
+*find method
+giong voi filter nhung chi in ra 1 phan tu va chi in ra phan tu dau tien thoa man dieu kien
+
+*Map
+tra ve 1 cai mang moi va cai mang ban dau kh bi modify
+
+cu phap:
+let mapArr = arr.map((item, index) => {
+    
+})
+
+*arry object
+ban chat la 1 mang nhung cac phan tu la cac obj
+
+cu phap array object:
+
+let arr = [
+    {
+        ...data1
+    },
+    {
+        ...data2
+    },
+    ...
+]
+
+cu phap object:
+
+let obj = {
+    ...data
+}
+
+*Destructuring object
+const User = {
+    id="123"
+    isVerified: true
+}
+
+const {id, isVerified} = User
+
+console.log(id,isVerified)//id = 123, isVerified = true
+
+*Lodash
+co nhung function cuc manh khi thao tac voi mang va object
+
+*Async
+Cho phep chay code ma kh can thu tu tren duoi nhanh hay cham deu duoc xu li het
+
+/ReactJS/
+
+*React state
+state cho phep thay doi gia tri cua 1 bien realtime(moi lan nhap hay xoa thi ham setState se render lai 1 lan)
+cu phap state = {
+
+}(co the coi la 1 object)
+
+cach truy cap: this.state.stateData
+
+*React DOM event
+vd: onChange, onClick,... la nhung thao tac cua nguoi dung trong 1 trang web
+
+cu phap:
+function handleOnChange la do chung ta tu dinh nghia va thuc hien viec ta muon lam
+onChange = {() => this.handelOnChange()}
+
+value dung de thao tac du lieu cua thang state
+event la bien global truyen vao bien callback cua DOM event cua thang html
+vd: <input value={this.state.stateData} type="text"
+        onChange = {(event) => this.handleOnChange(event)}
+    />
+
+*setState
+dung de thay doi gia tri cua state 1 cach realtime khi thuc hien DOM event
+
+cu phap:
+
+bien event duoc truyen vao tu phia html vao trong javascript de lay duoc gia tri input thong qua bien target va value
+target se tra ve the input va value se tra ve gia tri cua thang input do
+this.setState({
+    stateData : event.target.value//event.target o day duoc xem la 1 object tra ra bien input va goi den thuoc tinh value cua no se lay duoc gia tri cua bien input hien tai
+})
+
+*dinh nghia ham handleOnChange()
+phai dinh nghia ngoai ham render
+
+bien event duoc truyen qua html
+handleOnChange(event) => {
+    ...chuc nang muon thuc hien
+}
+
+*React props
+truyen data tu component cha sang component con dung de toi uu hoa cac component
+giup viec tai su dung lai cac component
+
+*this.props la 1 object
+
+cu phap:
+<ChildComponent propName={''}/>
+
+gan gia tri cho props:
+let {var1, var2, ,...} = this.props
+
+*Props with state trong DOM event
+Truyen data tu thang cha sang con va co the thay doi realtime duoc thong qua state
+cu phap:
+
+<ChildComponent propName={this.state.stateData}/>
+co the truyen vao 1 array object:
+<ChildComponent propName={this.state.arrObj}/>
+
+*Render Array object or render filtered array voi React
+cu phap:
+<div className={render-array}>
+    {arr.map((item, index) => {
+        return(
+            <div key={item.id}>
+                {item.arrData}
+            </div>
+        )
+    })}
+</div>
+
+*React keys props
+giup thang React nhan dien khi sua data cua mot div thi chi sua mot minh cai div do thoi
+ngoai ra key props con gia tang hieu nang cua trang web
